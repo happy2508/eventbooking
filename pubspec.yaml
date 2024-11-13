@@ -63,6 +63,12 @@ flutter:
     - images/app1.png
     - images/app2.png
     - images/app3.png
+    - images/app4.png
+    - images/app5.png
+    - images/app6.png
+    - images/gpay.png
+    - images/Paytm.png
+    - images/phonepay.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

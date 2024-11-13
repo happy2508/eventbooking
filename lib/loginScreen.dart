@@ -1,3 +1,4 @@
+import 'package:booking_app/homeScreen.dart';
 import 'package:booking_app/registrationScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,10 @@ class LoginScreen extends StatelessWidget {
 
                 // Login Button
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                   color: Colors.purple,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
