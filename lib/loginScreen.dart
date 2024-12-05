@@ -1,105 +1,3 @@
-// import 'package:booking_app/homeScreen.dart';
-// import 'package:booking_app/main.dart';
-// import 'package:booking_app/registrationScreen.dart';
-// import 'package:flutter/material.dart';
-
-// class LoginScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             colors: [Colors.blueAccent, Colors.purpleAccent],
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomRight,
-//           ),
-//         ),
-//         child: Center(
-//           child: Padding(
-//             padding: const EdgeInsets.all(16.0),
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: <Widget>[
-//                 // App logo
-//                 Icon(Icons.event, size: 100, color: Colors.white),
-//                 SizedBox(height: 50),
-
-//                 // Email TextField
-//                 TextField(
-//                   decoration: InputDecoration(
-//                     filled: true,
-//                     fillColor: Colors.white,
-//                     hintText: 'Email',
-//                     border: OutlineInputBorder(
-//                       borderRadius: BorderRadius.circular(30),
-//                       borderSide: BorderSide.none,
-//                     ),
-//                   ),
-//                 ),
-//                 SizedBox(height: 20),
-
-//                 // Password TextField
-//                 TextField(
-//                   obscureText: true,
-//                   decoration: InputDecoration(
-//                     filled: true,
-//                     fillColor: Colors.white,
-//                     hintText: 'Password',
-//                     border: OutlineInputBorder(
-//                       borderRadius: BorderRadius.circular(30),
-//                       borderSide: BorderSide.none,
-//                     ),
-//                   ),
-//                 ),
-//                 SizedBox(height: 10),
-
-//                 // Forgot Password
-//                 Align(
-//                   alignment: Alignment.centerRight,
-//                   child: Text('Forgot Password?',
-//                       style: TextStyle(color: Colors.white)),
-//                 ),
-//                 SizedBox(height: 20),
-
-//                 // Login Button
-//                 MaterialButton(
-//                   onPressed: () {
-//                     Navigator.push(context,
-//                         MaterialPageRoute(builder: (context) => MainPage()));
-//                   },
-//                   color: Colors.purple,
-//                   shape: RoundedRectangleBorder(
-//                       borderRadius: BorderRadius.circular(30)),
-//                   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
-//                   child: Text('Login',
-//                       style: TextStyle(color: Colors.white, fontSize: 16)),
-//                 ),
-
-//                 SizedBox(height: 20),
-
-//                 // Sign-up option
-//                 GestureDetector(
-//                   onTap: () {
-//                     Navigator.push(
-//                         context,
-//                         MaterialPageRoute(
-//                             builder: (context) => RegistrationScreen()));
-//                   },
-//                   child: Text('Don’t have an account? Sign up',
-//                       style: TextStyle(color: Colors.white)),
-//                 ),
-
-//                 SizedBox(height: 20),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:booking_app/main.dart';
 import 'package:booking_app/registrationScreen.dart';
 import 'package:flutter/material.dart';
@@ -107,12 +5,12 @@ import 'package:flutter/material.dart';
 class LoginScreen extends StatelessWidget {
   // Hardcoded list of users with email and password
   final List<Map<String, String>> users = [
-    {"email": "user1@example.com", "password": "password1"},
-    {"email": "user2@example.com", "password": "password2"},
-    {"email": "user3@example.com", "password": "password3"},
-    {"email": "user4@example.com", "password": "password4"},
-    {"email": "user5@example.com", "password": "password5"},
-    {"email": "user6@example.com", "password": "password6"},
+    {"email": "harsh@gmail.com", "password": "harsh123"},
+    {"email": "atharva@gmail.com", "password": "atharva123"},
+    {"email": "kunal@gmail.com", "password": "kunal123"},
+    {"email": "happy@gmail.com", "password": "happy123"},
+    {"email": "meenal@gmail.com", "password": "meenal123"},
+    {"email": "kunjal@gmail.com", "password": "kunjal123"},
     {"email": "user7@example.com", "password": "password7"},
     {"email": "user8@example.com", "password": "password8"},
     {"email": "user9@example.com", "password": "password9"},

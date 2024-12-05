@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  # image_picker: ^1.1.2
   # shared_preferences: ^2.3.3
   # image_picker: ^1.1.2
 
@@ -68,6 +69,10 @@ flutter:
     - images/app4.png
     - images/app5.png
     - images/app6.png
+    - images/p1.png
+    - images/p2.png
+    - images/p3.png
+    - images/p4.png
     - images/gpay.png
     - images/Paytm.png
     - images/phonepay.jpg

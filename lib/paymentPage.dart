@@ -1,7 +1,176 @@
+// import 'package:booking_app/PaymentSucesspage.dart';
+// import 'package:flutter/material.dart';
+
+// class PaymentPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Select Payment Method'),
+//         backgroundColor: Colors.blueAccent,
+//       ),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Text(
+//               'Select a Payment Method',
+//               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//             ),
+//             SizedBox(height: 20),
+
+//             // Credit Card Option
+//             Container(
+//               margin: EdgeInsets.symmetric(vertical: 8.0),
+//               padding: EdgeInsets.all(12.0),
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: Colors.grey),
+//                 borderRadius: BorderRadius.circular(8.0),
+//               ),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Row(
+//                     children: [
+//                       Container(
+//                           height: 40,
+//                           width: 40,
+//                           child: Image.asset("images/gpay.png")),
+//                       SizedBox(width: 16.0),
+//                       Text(
+//                         "gpay",
+//                         style: TextStyle(
+//                             fontSize: 16.0, fontWeight: FontWeight.w500),
+//                       ),
+//                     ],
+//                   ),
+//                   ElevatedButton(
+//                     onPressed: () {
+//                       // Handle button press
+//                     },
+//                     child: Text(
+//                       "Select",
+//                       style: TextStyle(
+//                           color: Colors.black, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Container(
+//               margin: EdgeInsets.symmetric(vertical: 8.0),
+//               padding: EdgeInsets.all(12.0),
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: Colors.grey),
+//                 borderRadius: BorderRadius.circular(8.0),
+//               ),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Row(
+//                     children: [
+//                       Container(
+//                           height: 40,
+//                           width: 40,
+//                           child: Image.asset("images/phonepay.jpg")),
+//                       SizedBox(width: 16.0),
+//                       Text(
+//                         "Phonepay",
+//                         style: TextStyle(
+//                             fontSize: 16.0, fontWeight: FontWeight.w500),
+//                       ),
+//                     ],
+//                   ),
+//                   ElevatedButton(
+//                     onPressed: () {
+//                       // Handle button press
+//                     },
+//                     child: Text(
+//                       "Select",
+//                       style: TextStyle(
+//                           color: Colors.black, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Container(
+//               margin: EdgeInsets.symmetric(vertical: 8.0),
+//               padding: EdgeInsets.all(12.0),
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: Colors.grey),
+//                 borderRadius: BorderRadius.circular(8.0),
+//               ),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: [
+//                   Row(
+//                     children: [
+//                       Container(
+//                           height: 40,
+//                           width: 40,
+//                           child: Image.asset("images/Paytm.png")),
+//                       SizedBox(width: 16.0),
+//                       Text(
+//                         "Paytm",
+//                         style: TextStyle(
+//                             fontSize: 16.0, fontWeight: FontWeight.w500),
+//                       ),
+//                     ],
+//                   ),
+//                   ElevatedButton(
+//                     style: ButtonStyle(),
+//                     onPressed: () {
+//                       // Handle button press
+//                     },
+//                     child: Text(
+//                       "Select",
+//                       style: TextStyle(
+//                           color: Colors.black, fontWeight: FontWeight.bold),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class PaymentMethodTile extends StatelessWidget {
+//   final String title;
+//   final IconData icon;
+//   final Function onTap;
+
+//   PaymentMethodTile(
+//       {required this.title, required this.icon, required this.onTap});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListTile(
+//       leading: Icon(icon, color: Colors.blueAccent),
+//       title: Text(
+//         title,
+//         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//       ),
+//       onTap: () => onTap(),
+//     );
+//   }
+// }
+
+// }
+
 import 'package:booking_app/PaymentSucesspage.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPage extends StatelessWidget {
+  final double totalPrice;
+
+  PaymentPage({required this.totalPrice});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +184,17 @@ class PaymentPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Select a Payment Method',
+              'Total Amount: ₹${totalPrice.toStringAsFixed(2)}',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
+            Text(
+              'Select a Payment Method',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
 
-            // Credit Card Option
+            // Payment Options
             Container(
               margin: EdgeInsets.symmetric(vertical: 8.0),
               padding: EdgeInsets.all(12.0),
@@ -36,10 +210,10 @@ class PaymentPage extends StatelessWidget {
                       Container(
                           height: 40,
                           width: 40,
-                          child: Image.asset("images/gpay.png")),
+                          child: Image.asset("images/Paytm.png")),
                       SizedBox(width: 16.0),
                       Text(
-                        "gpay",
+                        "Paytm",
                         style: TextStyle(
                             fontSize: 16.0, fontWeight: FontWeight.w500),
                       ),
@@ -48,6 +222,12 @@ class PaymentPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Handle button press
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UpiPaymentPage(
+                                    paymentMethod: '',
+                                  )));
                     },
                     child: Text(
                       "Select",
@@ -76,7 +256,7 @@ class PaymentPage extends StatelessWidget {
                           child: Image.asset("images/phonepay.jpg")),
                       SizedBox(width: 16.0),
                       Text(
-                        "Phonepay",
+                        "PhonePay",
                         style: TextStyle(
                             fontSize: 16.0, fontWeight: FontWeight.w500),
                       ),
@@ -85,6 +265,12 @@ class PaymentPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Handle button press
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UpiPaymentPage(
+                                    paymentMethod: '',
+                                  )));
                     },
                     child: Text(
                       "Select",
@@ -110,19 +296,23 @@ class PaymentPage extends StatelessWidget {
                       Container(
                           height: 40,
                           width: 40,
-                          child: Image.asset("images/Paytm.png")),
+                          child: Image.asset("images/gpay.png")),
                       SizedBox(width: 16.0),
                       Text(
-                        "Paytm",
+                        "GPay",
                         style: TextStyle(
                             fontSize: 16.0, fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                   ElevatedButton(
-                    style: ButtonStyle(),
                     onPressed: () {
-                      // Handle button press
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UpiPaymentPage(
+                                    paymentMethod: '',
+                                  )));
                     },
                     child: Text(
                       "Select",
@@ -132,7 +322,48 @@ class PaymentPage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.all(12.0),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                          height: 40,
+                          width: 40,
+                          child: Image.asset("images/gpay.png")),
+                      SizedBox(width: 16.0),
+                      Text(
+                        "Credit Card",
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreditCardPaymentPage()));
+                    },
+                    child: Text(
+                      "Select",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Add more payment methods as needed
           ],
         ),
       ),
@@ -140,23 +371,61 @@ class PaymentPage extends StatelessWidget {
   }
 }
 
-class PaymentMethodTile extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final Function onTap;
+class UpiPaymentPage extends StatefulWidget {
+  final String paymentMethod;
 
-  PaymentMethodTile(
-      {required this.title, required this.icon, required this.onTap});
+  UpiPaymentPage({required this.paymentMethod});
+
+  @override
+  _UpiPaymentPageState createState() => _UpiPaymentPageState();
+}
+
+class _UpiPaymentPageState extends State<UpiPaymentPage> {
+  final _upiController = TextEditingController();
+
+  void _processUpiPayment() {
+    if (_upiController.text.isNotEmpty) {
+      // Simulate UPI payment processing
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PaymentSuccessPage()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(icon, color: Colors.blueAccent),
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${widget.paymentMethod} Payment'),
+        backgroundColor: Colors.blueAccent,
       ),
-      onTap: () => onTap(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Text(
+              'Enter your ${widget.paymentMethod} UPI ID',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            TextFormField(
+              controller: _upiController,
+              decoration: InputDecoration(
+                labelText: 'UPI ID',
+                hintText: 'example@upi',
+                prefixIcon: Icon(Icons.account_balance_wallet),
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _processUpiPayment,
+              child: Text('Pay Now'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -242,65 +511,6 @@ class _CreditCardPaymentPageState extends State<CreditCardPaymentPage> {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class UpiPaymentPage extends StatefulWidget {
-  final String paymentMethod;
-
-  UpiPaymentPage({required this.paymentMethod});
-
-  @override
-  _UpiPaymentPageState createState() => _UpiPaymentPageState();
-}
-
-class _UpiPaymentPageState extends State<UpiPaymentPage> {
-  final _upiController = TextEditingController();
-
-  void _processUpiPayment() {
-    if (_upiController.text.isNotEmpty) {
-      // Simulate UPI payment processing
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => PaymentSuccessPage()),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('${widget.paymentMethod} Payment'),
-        backgroundColor: Colors.blueAccent,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Text(
-              'Enter your ${widget.paymentMethod} UPI ID',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              controller: _upiController,
-              decoration: InputDecoration(
-                labelText: 'UPI ID',
-                hintText: 'example@upi',
-                prefixIcon: Icon(Icons.account_balance_wallet),
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _processUpiPayment,
-              child: Text('Pay Now'),
-            ),
-          ],
         ),
       ),
     );
